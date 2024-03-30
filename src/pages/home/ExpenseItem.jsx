@@ -14,8 +14,8 @@ function ExpenseItem({ expense }) {
     <Modal>
       <div className="mb-2 rounded-lg bg-[#CAF3D1] px-2 pb-3 pt-1 sm:px-4">
         <div className="flex items-center justify-between">
-          <p className=" text-sm text-stone-500">
-            {format(date, "dd MMM yyyy")}
+          <p className=" text-sm text-stone-400">
+            {format(date, "dd MMMM yyyy")}
           </p>
           <div className="relative">
             <Menus.ToggleBtn id={id} />
