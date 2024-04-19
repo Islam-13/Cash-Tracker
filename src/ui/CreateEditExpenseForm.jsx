@@ -23,8 +23,8 @@ function CreateEditExpenseForm({ onCloseModal, expenseToEdit = {} }) {
   }
 
   return (
-    <form className="formStyle bg-white" onSubmit={handleSubmit(onSubmit)}>
-      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+    <form className="formStyle" onSubmit={handleSubmit(onSubmit)}>
+      <div className="formRow">
         <label htmlFor="date" className="sm:basis-24">
           Date
         </label>
@@ -46,7 +46,7 @@ function CreateEditExpenseForm({ onCloseModal, expenseToEdit = {} }) {
         </div>
       </div>
 
-      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+      <div className="formRow">
         <label htmlFor="title" className="sm:basis-24">
           Title
         </label>
@@ -69,7 +69,7 @@ function CreateEditExpenseForm({ onCloseModal, expenseToEdit = {} }) {
         </div>
       </div>
 
-      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+      <div className="formRow">
         <label htmlFor="price" className="sm:basis-24">
           Price
         </label>
@@ -91,7 +91,7 @@ function CreateEditExpenseForm({ onCloseModal, expenseToEdit = {} }) {
         </div>
       </div>
 
-      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+      <div className="formRow">
         <label htmlFor="category" className="sm:basis-24">
           Category
         </label>
@@ -129,10 +129,14 @@ function CreateEditExpenseForm({ onCloseModal, expenseToEdit = {} }) {
       />
 
       <div className="flex items-center justify-end gap-3">
-        <button onClick={onCloseModal} className="btn cancel">
+        <button type="reset" onClick={onCloseModal} className="btn cancel">
           Cancel
         </button>
-        <button disabled={isWorking} className="btn secondary m-[inherit]">
+        <button
+          type="submit"
+          disabled={isWorking}
+          className="btn secondary m-[inherit]"
+        >
           {isWorking && <LoaderMini />} {editSession ? "Edit" : "Add Expense"}
         </button>
       </div>

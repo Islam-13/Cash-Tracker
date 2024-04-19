@@ -45,6 +45,7 @@ function SignIn() {
                 type="email"
                 id="userEmail"
                 placeholder="example@yahoo.com"
+                defaultValue="demo@demo.com"
                 className="input"
                 {...register("email", {
                   required: "Email is required!!",
@@ -65,6 +66,7 @@ function SignIn() {
                 type="password"
                 id="userPassword"
                 placeholder="min 8 characters"
+                defaultValue="12345678"
                 className="input"
                 {...register("password", {
                   required: "Password is required!!",

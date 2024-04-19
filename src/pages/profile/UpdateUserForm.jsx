@@ -15,15 +15,12 @@ function UpdateUserForm({ userData, onCloseModal }) {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="rounded-md border bg-white px-3 py-5 shadow"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="formStyle">
       <h2 className="mb-5 text-center text-xl font-semibold">
         Update User Data
       </h2>
 
-      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+      <div className="formRow">
         <label htmlFor="email" className="sm:basis-24">
           Email
         </label>
@@ -38,7 +35,7 @@ function UpdateUserForm({ userData, onCloseModal }) {
         </div>
       </div>
 
-      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+      <div className="formRow">
         <label htmlFor="name" className="sm:basis-24">
           Name
         </label>
@@ -62,7 +59,7 @@ function UpdateUserForm({ userData, onCloseModal }) {
         </div>
       </div>
 
-      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+      <div className="formRow">
         <label htmlFor="phone" className="sm:basis-24">
           Phone
         </label>
@@ -88,7 +85,7 @@ function UpdateUserForm({ userData, onCloseModal }) {
         </div>
       </div>
 
-      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+      <div className="formRow">
         <label htmlFor="limit" className="sm:basis-24">
           Expenses Limit
         </label>
@@ -114,7 +111,7 @@ function UpdateUserForm({ userData, onCloseModal }) {
         </div>
       </div>
 
-      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+      <div className="formRow">
         <label htmlFor="avatar" className="sm:basis-24">
           Avatar image
         </label>
@@ -131,6 +128,7 @@ function UpdateUserForm({ userData, onCloseModal }) {
 
       <div className="flex items-center justify-end gap-3">
         <button
+          type="reset"
           disabled={isUpdating}
           onClick={onCloseModal}
           className="btn cancel"
@@ -138,7 +136,11 @@ function UpdateUserForm({ userData, onCloseModal }) {
           Cancel
         </button>
 
-        <button disabled={isUpdating} className="btn secondary mx-[inherit]">
+        <button
+          type="submit"
+          disabled={isUpdating}
+          className="btn secondary mx-[inherit]"
+        >
           {isUpdating && <LoaderMini />} Update Profile
         </button>
       </div>

@@ -19,9 +19,6 @@ function Profile() {
           <div className="mt-[80px] rounded-lg border bg-white py-4 shadow tab:p-7">
             <div className=" mb-4 text-center">
               <Avatar direction={"flex-col"} />
-              <p className=" text-sm capitalize text-stone-500">
-                riyadh, saudia arabia
-              </p>
             </div>
             <div className=" flex flex-col gap-4">
               <Modal.Open opens="edit-profile">
@@ -46,7 +43,7 @@ function Profile() {
 
           <div className="mt-7 grow tab:mt-[185px]">
             <div className=" text-stone-700">
-              <h2 className="my-3 hidden text-center text-xl font-semibold tab:block">
+              <h2 className="my-4 hidden text-center text-xl font-semibold tab:block">
                 Profile Info
               </h2>
               <div className="mx-auto sm:max-w-[600px]">
@@ -67,15 +64,6 @@ function Profile() {
                   <p className="input grow">
                     {user?.user_metadata?.limit
                       ? user?.user_metadata?.limit
-                      : " - "}
-                  </p>
-                </div>
-
-                <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center">
-                  <p className="sm:basis-24">Location</p>
-                  <p className="input grow">
-                    {user?.user_metadata?.location
-                      ? user?.user_metadata?.location
                       : " - "}
                   </p>
                 </div>

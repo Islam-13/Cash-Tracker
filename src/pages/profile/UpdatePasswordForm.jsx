@@ -14,15 +14,12 @@ function UpdatePasswordForm({ onCloseModal }) {
   }
 
   return (
-    <form
-      className="rounded-md border bg-white px-3 py-5 shadow"
-      onSubmit={handleSubmit(onSubmit)}
-    >
+    <form className="formStyle" onSubmit={handleSubmit(onSubmit)}>
       <h2 className="mb-5 text-center text-xl font-semibold">
         Update Password
       </h2>
 
-      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+      <div className="formRow">
         <label htmlFor="password" className="sm:basis-32">
           New Password
         </label>
@@ -45,7 +42,7 @@ function UpdatePasswordForm({ onCloseModal }) {
         </div>
       </div>
 
-      <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+      <div className="formRow">
         <label htmlFor="confirmPassword" className="sm:basis-32">
           Confirm Password
         </label>
@@ -70,10 +67,14 @@ function UpdatePasswordForm({ onCloseModal }) {
       </div>
 
       <div className="flex items-center justify-end gap-3">
-        <button onClick={onCloseModal} className="btn cancel">
+        <button type="reset" onClick={onCloseModal} className="btn cancel">
           Cancel
         </button>
-        <button disabled={isUpdating} className="btn secondary mx-[inherit]">
+        <button
+          type="submit"
+          disabled={isUpdating}
+          className="btn secondary mx-[inherit]"
+        >
           {isUpdating && <LoaderMini />} Update Password
         </button>
       </div>

@@ -26,7 +26,7 @@ function UpdatePassword() {
           Type in a new secure password and press save to update your password.
         </p>
 
-        <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+        <div className="formRow">
           <label htmlFor="password" className="sm:basis-32">
             New Password
           </label>
@@ -50,7 +50,7 @@ function UpdatePassword() {
           </div>
         </div>
 
-        <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center">
+        <div className="formRow">
           <label htmlFor="confirmPassword" className="sm:basis-32">
             Confirm Password
           </label>

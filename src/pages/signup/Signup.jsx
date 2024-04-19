@@ -32,7 +32,7 @@ function Signup() {
 
       <div className="grow bg-[#325765] p-5 pb-1 tab:w-[40%]">
         <form
-          className="mx-auto flex max-w-[440px] flex-col gap-3 p-4"
+          className="mx-auto flex max-w-[440px] flex-col gap-4 p-4"
           onSubmit={handleSubmit(onSubmit)}
         >
           <h3 className=" text-center text-2xl font-semibold capitalize tracking-wide">
