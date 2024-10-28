@@ -34,7 +34,7 @@ function CreateEditExpenseForm({ onCloseModal, expenseToEdit = {} }) {
             id="date"
             className="input"
             {...register("date", {
-              required: "Date name is required!!",
+              required: "Date is required!!",
             })}
           />
 

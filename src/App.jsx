@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
 import { Suspense, lazy } from "react";
@@ -20,88 +20,91 @@ const ForgetPassword = lazy(
   () => import("./pages/forgetPassword/ForgetPassword"),
 );
 
-const router = createBrowserRouter([
-  {
-    path: "",
-    element: <AppLayout />,
-    children: [
-      {
-        path: "signup",
-        element: (
-          <ProtectedAuthRoutes>
-            <Suspense fallback={<Loader />}>
-              <Signup />
-            </Suspense>
-          </ProtectedAuthRoutes>
-        ),
-      },
-      {
-        path: "signin",
-        element: (
-          <ProtectedAuthRoutes>
-            <Suspense fallback={<Loader />}>
-              <SignIn />
-            </Suspense>
-          </ProtectedAuthRoutes>
-        ),
-      },
-      {
-        path: "forget-password",
-        element: (
-          <ProtectedAuthRoutes>
-            <Suspense fallback={<Loader />}>
-              <ForgetPassword />
-            </Suspense>
-          </ProtectedAuthRoutes>
-        ),
-      },
-      {
-        path: "forget-password/update-password",
-        element: (
-          <ProtectedAuthRoutes>
-            <Suspense fallback={<Loader />}>
-              <UpdatePassword />
-            </Suspense>
-          </ProtectedAuthRoutes>
-        ),
-      },
-      {
-        path: "",
-        element: (
-          <ProtectedRoutes>
-            <Home />
-          </ProtectedRoutes>
-        ),
-      },
-      {
-        path: "profile",
-        element: (
-          <ProtectedRoutes>
-            <Suspense fallback={<Loader />}>
-              <Profile />
-            </Suspense>
-          </ProtectedRoutes>
-        ),
-      },
-      {
-        path: "/data",
-        element: (
-          <ProtectedRoutes>
-            <Suspense fallback={<Loader />}>
-              <Data />
-            </Suspense>
-          </ProtectedRoutes>
-        ),
-      },
-    ],
-  },
-]);
-
 function App() {
   const queryClinet = new QueryClient();
   return (
     <QueryClientProvider client={queryClinet}>
-      <RouterProvider router={router}></RouterProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            element={
+              <ProtectedRoutes>
+                <AppLayout />
+              </ProtectedRoutes>
+            }
+          >
+            <Route
+              index
+              element={
+                <ProtectedRoutes>
+                  <Home />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/data"
+              element={
+                <ProtectedRoutes>
+                  <Suspense fallback={<Loader />}>
+                    <Data />
+                  </Suspense>
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoutes>
+                  <Suspense fallback={<Loader />}>
+                    <Profile />
+                  </Suspense>
+                </ProtectedRoutes>
+              }
+            />
+          </Route>
+
+          <Route
+            path="signin"
+            element={
+              <ProtectedAuthRoutes>
+                <Suspense fallback={<Loader />}>
+                  <SignIn />
+                </Suspense>
+              </ProtectedAuthRoutes>
+            }
+          />
+          <Route
+            path="signup"
+            element={
+              <ProtectedAuthRoutes>
+                <Suspense fallback={<Loader />}>
+                  <Signup />
+                </Suspense>
+              </ProtectedAuthRoutes>
+            }
+          />
+          <Route
+            path="forget-password"
+            element={
+              <ProtectedAuthRoutes>
+                <Suspense fallback={<Loader />}>
+                  <ForgetPassword />
+                </Suspense>
+              </ProtectedAuthRoutes>
+            }
+          />
+          <Route
+            path="forget-password/update-password"
+            element={
+              <ProtectedAuthRoutes>
+                <Suspense fallback={<Loader />}>
+                  <UpdatePassword />
+                </Suspense>
+              </ProtectedAuthRoutes>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
       <Toaster
         position="top-center"
         gutter={10}

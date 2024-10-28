@@ -19,7 +19,7 @@
     @apply rounded border border-transparent p-1 transition-all duration-[0.3s] hover:border-stone-600 hover:bg-gray-200;
   }
   .btn {
-    @apply rounded-lg font-semibold capitalize tracking-wider text-green-50 text-inherit disabled:cursor-not-allowed disabled:opacity-65;
+    @apply min-w-fit rounded-lg font-semibold capitalize tracking-wider text-green-50 text-inherit disabled:cursor-not-allowed disabled:opacity-65;
   }
   .primary {
     @apply bg-green-500 px-6 py-2 text-green-50 hover:opacity-70 sm:text-xl;
@@ -121,14 +121,6 @@
   }
 }
 
-.home-screen {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding-bottom: 0.6rem;
-}
-
 .bg-profile::before {
   content: "";
   position: absolute;
@@ -142,7 +134,7 @@
 .filter-btn {
   font-size: 15px;
   font-weight: 600;
-  padding: 0.3rem;
+  padding: 0 0.3rem;
   border-radius: 0.5rem;
   transition: all 0.4s ease-in;
 }

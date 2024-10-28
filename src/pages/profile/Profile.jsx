@@ -1,5 +1,4 @@
 import Avatar from "../../ui/Avatar";
-import Header from "../../ui/Header";
 import Loader from "../../ui/Loader";
 import Modal from "../../ui/Modal";
 import UpdatePasswordForm from "./UpdatePasswordForm";
@@ -12,8 +11,6 @@ function Profile() {
   if (isLoading) return <Loader />;
   return (
     <Modal>
-      <Header />
-
       <section className="bg-profile">
         <div className="relative z-10 mx-auto max-w-[380px] gap-5 border border-transparent p-4 tab:flex tab:max-w-[80%]">
           <div className="mt-[80px] rounded-lg border bg-white py-4 shadow tab:p-7">

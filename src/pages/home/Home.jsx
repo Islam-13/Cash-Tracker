@@ -3,7 +3,6 @@ import Loader from "../../ui/Loader";
 import AddNewExpense from "./AddNewExpense";
 import Expenses from "./Expenses";
 import useGetExpenses from "./useGetExpenses";
-import Header from "../../ui/Header";
 import Empty from "../../ui/Empty";
 
 function Home() {
@@ -12,9 +11,7 @@ function Home() {
   if (isLoading) return <Loader />;
 
   return (
-    <div className="home-screen">
-      <Header />
-
+    <div className="flex h-[calc(100vh-62px)] flex-col gap-4 py-4">
       {expenses.length > 0 ? (
         <Expenses expenses={expenses} isLoading={isLoading} />
       ) : (
