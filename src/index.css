@@ -96,7 +96,7 @@
 
 .bg-auth {
   background: linear-gradient(rgba(50, 87, 101, 0.75), rgba(50, 87, 101, 0.75)),
-    url(../public/bg-auth.jpg);
+    url(/bg-auth.jpg);
   background-size: cover;
   background-position: center center;
 }
@@ -125,7 +125,7 @@
   content: "";
   position: absolute;
   width: 100%;
-  background-image: url(../public/bg-profile.jpg);
+  background-image: url(/bg-profile.jpg);
   background-size: cover;
   background-position: center;
   height: 200px;
