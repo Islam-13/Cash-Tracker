@@ -11,7 +11,7 @@ function Home() {
   if (isLoading) return <Loader />;
 
   return (
-    <div className="flex h-[calc(100vh-62px)] flex-col gap-4 py-4">
+    <div className="h-[calc(100dvh-62px)] flex flex-col gap-4 py-4">
       {expenses.length > 0 ? (
         <Expenses expenses={expenses} isLoading={isLoading} />
       ) : (
